@@ -22,8 +22,7 @@ contract SimpleStorage {
     }
 
     function addperson(string memory _name, uint256 _favoriteNumber) public {
-        People memory newPerson = People({favoriteNumber: _favoriteNumber, name: _name});
-        people.push(newPerson);
+        people.push(People(_favoriteNumber, _name));
     }
 }
 
