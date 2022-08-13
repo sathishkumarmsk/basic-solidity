@@ -5,6 +5,7 @@ contract SimpleStorage {
     uint256 public favoriteNumber;
 
     // People public person = People({favoriteNumber: 2, name: 'msk'});
+    mapping(string => uint256) public nameToFavoriteNumber;
     
     struct People {
         uint256 favoriteNumber;
@@ -23,6 +24,7 @@ contract SimpleStorage {
 
     function addperson(string memory _name, uint256 _favoriteNumber) public {
         people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
 
